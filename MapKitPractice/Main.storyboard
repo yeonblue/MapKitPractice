@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="mapkitpractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hdV-eh-fkQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="738"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uF2-bs-JqR">
+                                <rect key="frame" x="0.0" y="782" width="414" height="80"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GK9-aA-H2y">
+                                        <rect key="frame" x="108.5" y="24.5" width="197" height="32"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Satelite"/>
+                                            <segment title="Hybrid"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKF-Xo-2wW">
+                                        <rect key="frame" x="335.5" y="25" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="pinAddressButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9nu-Xy-TOn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="sKF-Xo-2wW" firstAttribute="leading" secondItem="GK9-aA-H2y" secondAttribute="trailing" constant="30" id="0sz-oU-Zm8"/>
+                                    <constraint firstItem="GK9-aA-H2y" firstAttribute="centerY" secondItem="uF2-bs-JqR" secondAttribute="centerY" id="6Zp-bI-TLV"/>
+                                    <constraint firstItem="sKF-Xo-2wW" firstAttribute="centerY" secondItem="GK9-aA-H2y" secondAttribute="centerY" id="pRn-NH-LaE"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sKF-Xo-2wW" secondAttribute="trailing" constant="8" id="xyZ-tb-Q57"/>
+                                    <constraint firstItem="GK9-aA-H2y" firstAttribute="centerX" secondItem="uF2-bs-JqR" secondAttribute="centerX" id="yCN-Ro-ieH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uF2-bs-JqR" secondAttribute="bottom" id="3w9-HI-xNX"/>
+                            <constraint firstItem="uF2-bs-JqR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mse-kd-Fcf"/>
+                            <constraint firstItem="uF2-bs-JqR" firstAttribute="top" secondItem="hdV-eh-fkQ" secondAttribute="bottom" id="OQW-CN-mak"/>
+                            <constraint firstItem="hdV-eh-fkQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X15-ab-hng"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uF2-bs-JqR" secondAttribute="trailing" id="cHH-sh-clU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hdV-eh-fkQ" secondAttribute="bottom" constant="80" id="l6i-h8-CYQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hdV-eh-fkQ" secondAttribute="trailing" id="moM-tf-GRn"/>
+                            <constraint firstItem="hdV-eh-fkQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nfJ-Ki-AN6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="hdV-eh-fkQ" id="NZH-Bu-QmZ"/>
+                        <outlet property="pinAddressButton" destination="uF2-bs-JqR" id="TSn-dr-fkQ"/>
+                        <outlet property="segmentControl" destination="GK9-aA-H2y" id="SH9-Um-vwX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
